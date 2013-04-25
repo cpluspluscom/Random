@@ -1,0 +1,52 @@
+# Project: Project1
+# Compiler: Default GCC compiler
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ 7.3 on 20/03/12 17:56
+
+WXLIBNAME = wxmsw28
+CPP       = g++.exe
+CC        = gcc.exe
+WINDRES   = "windres.exe"
+OBJ       = Objects/MingW/Z.o Objects/MingW/Units.o Objects/MingW/Building.o Objects/MingW/BASE.o Objects/MingW/Fighter.o Objects/MingW/Enemy.o Objects/MingW/Portrait.o
+LINKOBJ   = "Objects/MingW/Z.o" "Objects/MingW/Units.o" "Objects/MingW/Building.o" "Objects/MingW/BASE.o" "Objects/MingW/Fighter.o" "Objects/MingW/Enemy.o" "Objects/MingW/Portrait.o"
+LIBS      = -L"C:/Program Files/Dev-Cpp/Lib" -L"C:/Program Files/Dev-Cpp/SFML-1.6-dev-windows-mingw/SFML-1.6/lib" ../../SFML-1.6-dev-windows-mingw/SFML-1.6/lib/libsfml-window.a ../../SFML-1.6-dev-windows-mingw/SFML-1.6/lib/libsfml-system.a ../../SFML-1.6-dev-windows-mingw/SFML-1.6/lib/libsfml-graphics.a  -Wl,--enable-auto-import  
+INCS      = -I"C:/Program Files/Dev-Cpp/Include" -I"C:/Program Files/Dev-Cpp/SFML-1.6-dev-windows-mingw/SFML-1.6/include"
+CXXINCS   = -I"C:/Program Files/Dev-Cpp/lib/gcc/mingw32/3.4.5/include" -I"C:/Program Files/Dev-Cpp/include/c++/3.4.5/backward" -I"C:/Program Files/Dev-Cpp/include/c++/3.4.5/mingw32" -I"C:/Program Files/Dev-Cpp/include/c++/3.4.5" -I"C:/Program Files/Dev-Cpp/include" -I"C:/Program Files/Dev-Cpp/" -I"C:/Program Files/Dev-Cpp/include/common/wx/msw" -I"C:/Program Files/Dev-Cpp/include/common/wx/generic" -I"C:/Program Files/Dev-Cpp/include/common/wx/html" -I"C:/Program Files/Dev-Cpp/include/common/wx/protocol" -I"C:/Program Files/Dev-Cpp/include/common/wx/xml" -I"C:/Program Files/Dev-Cpp/include/common/wx/xrc" -I"C:/Program Files/Dev-Cpp/include/common/wx" -I"C:/Program Files/Dev-Cpp/include/common" -I"C:/Program Files/Dev-Cpp/SFML-1.6-dev-windows-mingw/SFML-1.6/include"
+RCINCS    = --include-dir "C:/PROGRA~1/Dev-Cpp/include/common"
+BIN       = Output/MingW/Z.exe
+DEFINES   = 
+CXXFLAGS  = $(CXXINCS) $(DEFINES)  
+CFLAGS    = $(INCS) $(DEFINES)  
+GPROF     = gprof.exe
+RM        = rm -f
+LINK      = g++.exe
+
+.PHONY: all all-before all-after clean clean-custom
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(LINKOBJ) "$(BIN)"
+
+$(BIN): $(OBJ)
+	$(LINK) $(LINKOBJ) -o "$(BIN)" $(LIBS) 
+
+Objects/MingW/Z.o: $(GLOBALDEPS) Z.cpp ZEvent.hpp Units.hpp Fighter.hpp Units.hpp Enemy.hpp Units.hpp Building.hpp Units.hpp Portrait.hpp Units.hpp
+	$(CPP) -c Z.cpp -o Objects/MingW/Z.o $(CXXFLAGS)
+
+Objects/MingW/Units.o: $(GLOBALDEPS) Units.cpp Units.hpp
+	$(CPP) -c Units.cpp -o Objects/MingW/Units.o $(CXXFLAGS)
+
+Objects/MingW/Building.o: $(GLOBALDEPS) Building.cpp Building.hpp Units.hpp
+	$(CPP) -c Building.cpp -o Objects/MingW/Building.o $(CXXFLAGS)
+
+Objects/MingW/BASE.o: $(GLOBALDEPS) BASE.cpp Building.hpp Units.hpp
+	$(CPP) -c BASE.cpp -o Objects/MingW/BASE.o $(CXXFLAGS)
+
+Objects/MingW/Fighter.o: $(GLOBALDEPS) Fighter.cpp Fighter.hpp Units.hpp
+	$(CPP) -c Fighter.cpp -o Objects/MingW/Fighter.o $(CXXFLAGS)
+
+Objects/MingW/Enemy.o: $(GLOBALDEPS) Enemy.cpp Enemy.hpp Units.hpp
+	$(CPP) -c Enemy.cpp -o Objects/MingW/Enemy.o $(CXXFLAGS)
+
+Objects/MingW/Portrait.o: $(GLOBALDEPS) Portrait.cpp Portrait.hpp Units.hpp
+	$(CPP) -c Portrait.cpp -o Objects/MingW/Portrait.o $(CXXFLAGS)
